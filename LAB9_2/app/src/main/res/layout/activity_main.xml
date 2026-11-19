@@ -1,0 +1,68 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="體位檢測機" android:textSize="24sp" />
+            <RadioGroup android:id="@+id/rgGender"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:checkedButton="@id/btnBoy">
+                <RadioButton android:id="@+id/btnBoy" android:text="男"
+                    android:layout_width="wrap_content" android:layout_height="48dp" />
+                <RadioButton android:id="@+id/btnGirl" android:text="女"
+                    android:layout_width="wrap_content" android:layout_height="48dp" />
+            </RadioGroup>
+            <EditText android:id="@+id/edHeight"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="身高（公分）" android:inputType="numberDecimal"
+                android:maxLines="1" />
+            <EditText android:id="@+id/edWeight"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="體重（公斤）" android:inputType="numberDecimal"
+                android:maxLines="1" />
+            <EditText android:id="@+id/edAge"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:hint="年齡" android:inputType="number"
+                android:maxLines="1" />
+            <Button android:id="@+id/btnCalculate" android:text="計算"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+                <TextView android:id="@+id/tvWeightResult"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:padding="4dp"
+                    android:gravity="center" android:text="標準體重\n無" />
+                <TextView android:id="@+id/tvFatResult"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:padding="4dp"
+                    android:gravity="center" android:text="體脂肪\n無" />
+                <TextView android:id="@+id/tvBmiResult"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:padding="4dp"
+                    android:gravity="center" android:text="BMI\n無" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:id="@+id/llProgress"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#CC000000" android:visibility="gone"
+        android:clickable="true" android:focusable="true"
+        android:orientation="horizontal" android:gravity="center">
+        <ProgressBar android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ProgressBar android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:max="100" />
+        <TextView android:id="@+id/tvProgress"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:text="0%"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</FrameLayout>
